@@ -69,6 +69,7 @@ const planets = ref([])
 const searchInput = ref('')
 const page = ref(1)
 const itemsPerPage = 10
+let searchTimeout = null
 
 // Get data
 
@@ -111,7 +112,13 @@ watch(searchInput, (searchInput) => {
     return
   }
 
-  searchPlanetsWithTerm(searchInput)
+  if (searchTimeout) {
+    clearTimeout(searchTimeout)
+  }
+
+  searchTimeout = setTimeout(() => {
+    searchPlanetsWithTerm(searchInput)
+  }, 800)
 })
 
 const clearSearchInput = () => {

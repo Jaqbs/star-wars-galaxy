@@ -19,7 +19,7 @@ body {
   background: #181e2b;  
   transition:
     color 0.5s,
-    background-color 2s ease;
+    background-color 1.5s ease;
   line-height: 1.6;
   font-family:
     Inter,
